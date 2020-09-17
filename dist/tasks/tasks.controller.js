@@ -48,7 +48,7 @@ let TasksController = class TasksController {
 };
 __decorate([
     common_1.Get(),
-    __param(0, common_1.Query()),
+    __param(0, common_1.Query(common_1.ValidationPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [get_tasks_filter_dto_1.getTaskFilterDto]),
     __metadata("design:returntype", Array)
@@ -62,6 +62,7 @@ __decorate([
 ], TasksController.prototype, "getTaskByID", null);
 __decorate([
     common_1.Post(),
+    common_1.UsePipes(common_1.ValidationPipe),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_task_dto_1.CreateTaskDto]),
